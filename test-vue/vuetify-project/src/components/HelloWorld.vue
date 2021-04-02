@@ -1,6 +1,8 @@
 <template>
   <v-app>
-
+    <v-app-bar color="error" dark>
+      <v-toolbar-title>Vuetify</v-toolbar-title>
+    </v-app-bar>
   </v-app>
 </template>
 
