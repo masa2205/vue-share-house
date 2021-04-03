@@ -8,12 +8,15 @@
       <v-toolbar-items>
       <v-menu offset-y>
         <template v-slot:activator="{on}">
-        <v-btn v-on="on" text elevation="24">Button</v-btn>
+        <v-btn v-on="on" text elevation="24">Button<v-icon>mdi-menu-down</v-icon></v-btn>
         </template>
         <v-list>
-          <v-list-item v-for="support in supports" :key="support">
+          <v-list-item v-for="support in supports" :key="support.name">
+           <v-list-item-icon>
+           <v-icon>{{ support.icon }}</v-icon>
+           </v-list-item-icon> 
            <v-list-item-content>
-             <v-list-item-title>{{ support }}</v-list-item-title>
+             <v-list-item-title>{{ support.name }}</v-list-item-title>
            </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -30,11 +33,11 @@
       return{
         drawer: null,
         supports:[
-          'HTML',
-          'CSS',
-          'JS',
-          'Python',
-          'Vue.js'
+          {name:'HTML',icon:'mdi-vuetify'},
+          {name:'CSS',icon:'mdi-discord'},
+          {name:'JS',icon:'mdi-bug'},
+          {name:'Python',icon:'mdi-github'},
+          {name:'Vue.js',icon:'mdi-stack-overflow'},
         ]
       }
    }
