@@ -10,16 +10,6 @@
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list dense nav>
-          <v-list-item v-for="nav_list in nav_lists" :key="nav_list.name">
-            <v-list-item-icon>
-              <v-icon>{{ nav_list.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-list-item-title>{{ nav_list.name }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
       </v-container>
     </v-navigation-drawer>
     <v-app-bar color="info" dark app clipped-left>
@@ -59,14 +49,6 @@
           {name:'JS',icon:'mdi-bug'},
           {name:'Python',icon:'mdi-github'},
           {name:'Vue.js',icon:'mdi-stack-overflow'},
-        ],
-        nav_lists:[
-          {name: 'Getting Started',icon: 'mdi-vuetify'},
-          {name: 'Customization',icon: 'mdi-cogs'},
-          {name: 'Styles & animations',icon: 'mdi-palette'},
-          {name: 'UI Components',icon: 'mdi-view-dashboard'},
-          {name: 'Directives',icon: 'mdi-function'},
-          {name: 'Preminum themes',icon: 'mdi-vuetify'},
         ]
       }
    }
