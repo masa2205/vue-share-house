@@ -1,6 +1,17 @@
 <template>
   <v-app>
-    <v-navigation-drawer app v-model="drawer" clipped>Navigation Lists</v-navigation-drawer>
+    <v-navigation-drawer app v-model="drawer" clipped>
+      <v-container>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="title blue--text text--darken-2">
+              Navigation lists
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-container>
+    </v-navigation-drawer>
     <v-app-bar color="info" dark app clipped-left>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Vuetify</v-toolbar-title>
