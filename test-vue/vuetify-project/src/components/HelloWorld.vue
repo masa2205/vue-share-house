@@ -10,11 +10,13 @@
         <template v-slot:activator="{on}">
         <v-btn v-on="on" text elevation="24">Button</v-btn>
         </template>
-        <v-list-item>
-          <v-list-item-content>
-            <v-list-item-title>hoge</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list>
+          <v-list-item v-for="support in supports" :key="support">
+           <v-list-item-content>
+             <v-list-item-title>{{ support }}</v-list-item-title>
+           </v-list-item-content>
+          </v-list-item>
+        </v-list>
       </v-menu>
       </v-toolbar-items>
     </v-app-bar>
@@ -26,7 +28,14 @@
   export default {
     data() {
       return{
-        drawer: null
+        drawer: null,
+        supports:[
+          'HTML',
+          'CSS',
+          'JS',
+          'Python',
+          'Vue.js'
+        ]
       }
    }
   } 
