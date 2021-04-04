@@ -325,3 +325,42 @@ data() {
 - `v-dividerタグ` : 横線
 - `dense`  リストの高さ
 
+## nastedリストの設定
+
+サイドのナビゲーションメニューの項目をクリックするとその項目に紐づいているその下の階層のメニューを表示させるためにエクスパンションリストの設定を行う。  
+リストの設定を行ったが、`v-list-group`タグを使用するため書き換えが必要。  
+下の階層がある項目については新たにlistsで配列を追加。
+```
+ nav_lists:[
+          {name: 'Getting Started',icon: 'mdi-vuetify',lists:['Quick Start','Pre-made layouts']},
+          {name: 'Customization',icon: 'mdi-cogs'},
+          {name: 'Styles & animations',icon: 'mdi-palette',lists:['Colors','Content','Display']},
+          {name: 'UI Components',icon: 'mdi-view-dashboard',lists:['API explorer','Alerts']},
+          {name: 'Directives',icon: 'mdi-function'},
+          {name: 'Preminum themes',icon: 'mdi-vuetify'},
+        ]
+```
+```
+<v-list dense nav>
+           <v-list-group 
+            v-for="nav_list in nav_lists" 
+            :key="nav_list.name" 
+            :prepend-icon="nav_list.icon" 
+            no-action 
+            :append-icon="nav_list.lists ? undefined : ''"> 
+              <template v-slot:activator>
+                <v-list-item-content>
+                  <v-list-item-title>{{ nav_list.name }}</v-list-item-title>
+                </v-list-item-content>
+              </template>
+              <v-list-item v-for="list in nav_list.lists" :key="list">
+                <v-list-item-content>
+                  <v-list-item-title>{{ list }}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+           </v-list-group>
+        </v-list>
+```
+- no-action : paddingの設定
+- :append-icon="nav_list.lists ? undefined : '' → 矢印の表示を制御
+
