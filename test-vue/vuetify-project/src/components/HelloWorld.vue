@@ -53,6 +53,9 @@
       </v-menu>
       </v-toolbar-items>
     </v-app-bar>
+    <v-main>
+      <router-view />
+    </v-main>
     <v-footer color="info" dark app>Vuetify</v-footer>
   </v-app>
 </template>
