@@ -364,3 +364,13 @@ data() {
 - no-action : paddingの設定
 - :append-icon="nav_list.lists ? undefined : '' → 矢印の表示を制御
 
+## コンテンツの設定
+
+コンテンツを表示させる部分には、`v-main`タグを使用。  
+`v-main`タグは`v-app-bar`タグ(閉じタグ)の下に配置。
+```
+</v-app-bar>
+    <v-main>
+      <router-view />
+    </v-main>
+```
